@@ -1,0 +1,3 @@
+#automount
+ssh-copy-id ingolfur@ADDRESS
+ingolfur@ADDRESS:/mnt /mnt  fuse.sshfs noauto,x-systemd.automount,_netdev,users,idmap=user,IdentityFile=/home/ingolfur/.ssh/id_rsa,allow_other,reconnect 0 0
