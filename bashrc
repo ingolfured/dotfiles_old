@@ -9,6 +9,7 @@ if [[ $- != *i* ]] ; then
          return
 fi
 
+#TODO: FIX
 
 
 source /etc/profile.d/autojump.sh

@@ -22,9 +22,8 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
+# start a terminal, $TERMINAL in xinitrc
 bindsym $mod+Return exec i3-sensible-terminal
-#bindsym $mod+Return exec lilyterm
 
 # kill focused window
 bindsym $mod+Shift+Q kill
@@ -145,7 +144,6 @@ bindsym $mod+r mode "resize"
 
 #forrit
 bindsym $mod+c exec --no-startup-id chromium
-bindsym $mod+Shift+c exec --no-startup-id powchromium
 bindsym $mod+p exec --no-startup-id spotify
 
 bindsym $mod+x exec i3lock -i /home/ingolfur/wallpapers/curr.png -n
@@ -168,3 +166,6 @@ bindsym XF86TouchpadToggle exec "synclient TouchpadOff=$(synclient | awk '/Touch
 
 #Icelandic keyboard
 exec setxkbmap -option grp:alt_shift_toggle "us,is" -option grp_led:caps 
+exec xmodmap -e "clear Lock"
+exec xmodmap -e "keycode 66 = Hyper_L"
+exec xmodmap -e "add mod4 = Hyper_L"

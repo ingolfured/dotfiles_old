@@ -7,7 +7,7 @@
 ########## Variables
 
 dir=~/dotfiles                    # dotfiles directory
-files="bashrc vimrc i3 xinitrc other bash_profile inputrc"    # list of files/folders to symlink in homedir
+files="Xmodmap bashrc vimrc i3 xinitrc other bash_profile inputrc"    # list of files/folders to symlink in homedir
 
 ##########
 
