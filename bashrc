@@ -10,6 +10,9 @@ if [[ $- != *i* ]] ; then
 fi
 
 
+
+source /etc/profile.d/autojump.sh
+
 # Fancy PWD display function
 # The home directory (HOME) is replaced with a ~
 # /home/me/stuff          -> ~/stuff               if USER=me
@@ -109,7 +112,7 @@ set -o noclobber
 #set -o ignoreeof
 
 #Treat undefined variables as errors
-set -o nounset
+#set -o nounset
 
 
 
@@ -172,4 +175,3 @@ fi
 if [ -f ~/.dir_colors ]; then
             eval `dircolors ~/.dir_colors`
 fi 
-export EDITOR="/usr/bin/mate -w"
