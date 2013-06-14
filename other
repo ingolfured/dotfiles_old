@@ -2,3 +2,12 @@
 ssh-copy-id ingolfur@ADDRESS
 ingolfur@ADDRESS:/mnt /mnt  fuse.sshfs noauto,x-systemd.automount,_netdev,users,idmap=user,IdentityFile=/home/ingolfur/.ssh/id_rsa,allow_other,reconnect 0 0
 
+#locale
+uncomment /etc/locale.gen
+locale-gen
+locale -a #til ad sja hvort install tokst
+
+
+/etc/locale.conf
+LANG="is_IS.utf8"
+
