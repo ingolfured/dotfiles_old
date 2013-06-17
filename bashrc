@@ -9,10 +9,10 @@ if [[ $- != *i* ]] ; then
          return
 fi
 
-#TODO: FIX
 
 
 source /etc/profile.d/autojump.sh
+source ~/dotfiles/bash_aliases 
 
 # Fancy PWD display function
 # The home directory (HOME) is replaced with a ~
