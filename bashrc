@@ -1,14 +1,14 @@
 #.bashrc
 export PAGER=less
 export EDITOR=vim
-export PATH=$PATH
+export PATH=$PATH/home/ingolfur/.gem/ruby/2.0.0/bin
 export LESS='-R'
+
 
 if [[ $- != *i* ]] ; then
          # Shell is non-interactive.  Be done now!
          return
 fi
-
 
 
 source /etc/profile.d/autojump.sh
@@ -176,3 +176,11 @@ fi
 if [ -f ~/.dir_colors ]; then
             eval `dircolors ~/.dir_colors`
 fi 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# Display the current RVM ruby selection
+#PS1="\$(/usr/local/rvm/bin/rvm-prompt) $PS1"
+
+# RVM bash completion
+#[[ -r /usr/local/rvm/scripts/completion ]] && . /usr/local/rvm/scripts/completion
