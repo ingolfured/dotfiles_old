@@ -162,12 +162,11 @@ bindsym XF86AudioMute exec amixer -q sset Master toggle
 bindsym XF86TouchpadToggle exec "synclient TouchpadOff=$(synclient | awk '/TouchpadOff/ {print ($3+1)%2}')"
 bindsym XF86MonBrightnessDown  exec  xbacklight -dec 10
 bindsym XF86MonBrightnessUp  exec  xbacklight -inc 10
+bindsym XF86WLAN exec [ "$(</sys/class/rfkill/rfkill0/state)" = "1" ] && sudo rfkill block 0 || sudo rfkill unblock 0
 
 # Simulate ctrl+v upon pressing $mod+x
 #bindsym --release $mod+Shift+V exec --no-startup-id xdotool key --clearmodifiers ctrl+v
 
 #Icelandic keyboard
 exec setxkbmap -option grp:alt_shift_toggle "us,is" -option grp_led:caps 
-exec xmodmap -e "clear Lock"
-exec xmodmap -e "keycode 66 = Hyper_L"
-exec xmodmap -e "add mod4 = Hyper_L"
+

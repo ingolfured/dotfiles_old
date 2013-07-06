@@ -1,0 +1,11 @@
+[user]
+	email = ingolfured@gmail.com
+	name = Ingolfur Edvardsson
+[push]
+	default = simple
+
+[color]
+	diff = auto
+	ui = true
+[mergetool]
+	keepBackup = false
