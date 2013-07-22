@@ -11,3 +11,5 @@ locale -a #til ad sja hvort install tokst
 /etc/locale.conf
 LANG="is_IS.utf8"
 
+#get all subtitles, {} is the file 
+find /mnt/TV/ -name "*.avi" -or -name "*.mkv" -or -name "*.mpg" -exec submarine -l en -s os -v -f {} \;

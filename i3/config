@@ -163,6 +163,10 @@ bindsym XF86TouchpadToggle exec "synclient TouchpadOff=$(synclient | awk '/Touch
 bindsym XF86MonBrightnessDown  exec  xbacklight -dec 10
 bindsym XF86MonBrightnessUp  exec  xbacklight -inc 10
 bindsym XF86WLAN exec [ "$(</sys/class/rfkill/rfkill0/state)" = "1" ] && sudo rfkill block 0 || sudo rfkill unblock 0
+#bindsym XF86KbdBrightnessDown  exec backlight-off
+#bindsym XF86KbdBrightnessDown  exec backlight-on
+#bindsym XF86KbdBrightnessDown  exec samsung-tools -c 
+
 
 # Simulate ctrl+v upon pressing $mod+x
 #bindsym --release $mod+Shift+V exec --no-startup-id xdotool key --clearmodifiers ctrl+v
