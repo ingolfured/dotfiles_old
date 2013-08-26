@@ -13,3 +13,9 @@ LANG="is_IS.utf8"
 
 #get all subtitles, {} is the file 
 find /mnt/TV/ -name "*.avi" -or -name "*.mkv" -or -name "*.mpg" -exec submarine -l en -s os -v -f {} \;
+
+#make vim awesome
+curl -Lo- https://bit.ly/janus-bootstrap | bash
+
+#make counter strike work
+sudo pacman -Sy lib32-intel-dri
