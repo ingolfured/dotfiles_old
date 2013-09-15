@@ -17,5 +17,8 @@ find /mnt/TV/ -name "*.avi" -or -name "*.mkv" -or -name "*.mpg" -exec submarine 
 #make vim awesome
 curl -Lo- https://bit.ly/janus-bootstrap | bash
 
-#make counter strike work
+#make 3D acceleration work using linux
 sudo pacman -Sy lib32-intel-dri
+
+#To get hibernation to work, add resume to hooks in mkinitcpio.conf in etc and run
+mkinitcpio -p linux
