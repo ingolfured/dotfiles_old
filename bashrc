@@ -53,9 +53,9 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
 #colors
-#alias ls='ls --color'
+alias ls='ls --color'
 #alias ls='ls -hp --time-style=locale --color' 
-alias ls='ls -G'
+#alias ls='ls -G'
 alias grep='grep --color=auto'
 #alias ncmpc='ncmpc -c'
 #unicode

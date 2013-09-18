@@ -7,7 +7,7 @@
 ########## Variables
 
 dir=~/dotfiles                    # dotfiles directory
-files="gitconfig Xmodmap bashrc vimrc i3 xinitrc other bash_profile inputrc"    # list of files/folders to symlink in homedir
+files="gitconfig Xmodmap bashrc i3 xinitrc other vimperatorrc fehbg git-prompt.sh i3status.conf vimrc.before bash_profile inputrc"    # list of files/folders to symlink in homedir
 
 ##########
 
