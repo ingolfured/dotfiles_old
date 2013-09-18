@@ -1,0 +1,18 @@
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
+set hinttags="//*[@onclick or @onmouseover or @onmousedown or @onmouseup or @oncommand or @class='lk' or @role='link' or @role='button'] | //input[not(@type='hidden')] | //a | //area | //iframe | //textarea | //button | //select | //xhtml:input[not(@type='hidden')] | //xhtml:a | //xhtml:area | //xhtml:iframe | //xhtml:textarea | //xhtml:button | //xhtml:select | //div[contains(@class,'J-K-I J-J5-Ji')]"
+set cpt=l
+nmap e :tabdetach <CR>
+nmap  <C-t> :echo "ekkert svona" <CR>
+
+nmap <silent> <S-k> :js toggle_bottombar()<CR>
+
+:js << EOF
+function toggle_bottombar() {
+    var bb = document.getElementById('liberator-bottombar');
+    if (!bb)
+        return;
+    bb.style.height = (bb.style.height == '') ? '0px' : '';
+    bb.style.overflow = (bb.style.height == '') ? '' : 'hidden';
+    }
+EOF
+
