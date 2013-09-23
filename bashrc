@@ -114,6 +114,6 @@ export PATH="$PATH:/home/ingolfur/.gem/ruby/2.0.0/bin"
 if [ -f ~/.git-prompt.sh ]; then
   source ~/.git-prompt.sh
 fi
-export PS1='[\[\e[0;32m\]\u\[\e[m]\]@[\[\e[0;32m\]\h\[\e[m]\] \w \[\e[0;33m\]$(__git_ps1)\[\e[m$\] '
+export PS1="[\[\e[35m\]\u\[\e[0m\]]@[\[\e[35m\]\h\[\e[0m\]]:\w\$ $(__git_ps1) "
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
