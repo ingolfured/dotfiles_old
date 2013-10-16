@@ -147,7 +147,7 @@ bindsym $mod+c exec --no-startup-id firefox
 bindsym $mod+m exec --no-startup-id spotify
 bindsym $mod+p exec --no-startup-id firefox -new-window http://ingoserver:32400/web/index.html#!/servers/d9f0ea39f10bdc6fffb437a6f73665eb7c45d9ea/sections/1 
 
-bindsym $mod+x exec i3lock -i /home/ingolfur/wallpapers/curr.png -n
+bindsym $mod+x exec i3lock -i /home/ingolfur/.curr.png -n
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -157,7 +157,7 @@ bar {
         status_command i3status 
 }
 
-bindsym XF86Display exec xrandr --output HDMI1 --left-of eDP1
+bindsym XF86Display exec xrandr --output HDMI1 --right-of eDP1
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
 bindsym XF86AudioLowerVolume  exec amixer -q sset Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q sset Master toggle
