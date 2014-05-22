@@ -115,15 +115,7 @@ bindsym $mod+Shift+t reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
-# resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
@@ -144,17 +136,18 @@ bindsym $mod+r mode "resize"
 
 #forrit
 bindsym $mod+c exec --no-startup-id firefox
+bindsym $mod+o exec --no-startup-id pavucontrol
+bindsym $mod+Shift+c exec --no-startup-id firefox --private
 bindsym $mod+m exec --no-startup-id spotify
-bindsym $mod+p exec --no-startup-id firefox -new-window http://ingoserver:32400/web/index.html#!/servers/d9f0ea39f10bdc6fffb437a6f73665eb7c45d9ea/sections/1 
-
+bindsym $mod+p exec --no-startup-id firefox -new-window http://rosalegt:32400/web/
+#bindsym $mod+y exec --no-startup-id setxkbmap -option grp:alt_shift_toggle "us,is"
 bindsym $mod+x exec i3lock -i /home/ingolfur/.curr.png -n
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	
-        status_command i3status 
+        status_command i3status
 }
 
 bindsym XF86Display exec xrandr --output HDMI1 --right-of eDP1
@@ -180,3 +173,19 @@ bindsym Print exec scrot -e 'mv $f ~/screenshots/'
 #Icelandic keyboard
 exec setxkbmap -option grp:alt_shift_toggle "us,is" -option grp_led:caps 
 
+# Eclipse splashscreen
+#for_window [class="Eclipse" title="^Eclipse( SDK )?$"] floating enable
+#
+# # Orca screen reader "flat review" tool (also disable border so it doesn't cover the item being reviewed)
+for_window [title="Alice"] floating enable
+for_window [title="Bob"] floating enable
+for_window [title="MainControl"] floating enable
+for_window [title="Mallory"] floating enable
+for_window [title="Eclipse"] floating disable
+for_window [title="funfunfun"] floating enable
+for_window [title="Boids"] floating enable
+
+#for_window [title="Alice" class="sun-awt-X11-XFramePeer" ] floating enable
+#for_window [title="Bob"  class="sun-awt-X11-XFramePeer" ] floating enable
+#for_window [title="MainControl" class="sun-awt-X11-XFramePeer" ] floating enable
+#for_window [title="Mallory" class="sun-awt-X11-XFramePeer" ] floating enable

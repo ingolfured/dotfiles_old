@@ -4,5 +4,6 @@ feh  --bg-scale $HOME/.curr.png
 xset -b
 xset r rate 200 50
 twmnd &
+dropboxd &
 pulseaudio --start &
 exec i3
