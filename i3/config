@@ -150,7 +150,7 @@ bar {
         status_command i3status
 }
 
-bindsym XF86Display exec xrandr --output HDMI1 --right-of eDP1
+bindsym XF86Display exec "xrandr --auto && xrandr --output eDP1 --off && xrandr --output eDP1 --left-of HDMI1 --auto"
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
 bindsym XF86AudioLowerVolume  exec amixer -q sset Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q sset Master toggle
@@ -164,28 +164,24 @@ bindsym Print exec scrot -e 'mv $f ~/screenshots/'
 
 #bindsym XF86KbdBrightnessDown  exec backlight-off
 #bindsym XF86KbdBrightnessDown  exec backlight-on
-#bindsym XF86KbdBrightnessDown  exec samsung-tools -c 
+#bindsym XF86KbdBrightnessDown  exec samsung-tools -c
 
 
 # Simulate ctrl+v upon pressing $mod+x
 #bindsym --release $mod+Shift+V exec --no-startup-id xdotool key --clearmodifiers ctrl+v
 
 #Icelandic keyboard
-exec setxkbmap -option grp:alt_shift_toggle "us,is" -option grp_led:caps 
+exec setxkbmap -option grp:alt_shift_toggle "us,is" -option grp_led:caps
 
 # Eclipse splashscreen
 #for_window [class="Eclipse" title="^Eclipse( SDK )?$"] floating enable
 #
 # # Orca screen reader "flat review" tool (also disable border so it doesn't cover the item being reviewed)
 for_window [title="Alice"] floating enable
-for_window [title="Bob"] floating enable
-for_window [title="MainControl"] floating enable
-for_window [title="Mallory"] floating enable
-for_window [title="Eclipse"] floating disable
-for_window [title="funfunfun"] floating enable
-for_window [title="Boids"] floating enable
 
 #for_window [title="Alice" class="sun-awt-X11-XFramePeer" ] floating enable
 #for_window [title="Bob"  class="sun-awt-X11-XFramePeer" ] floating enable
 #for_window [title="MainControl" class="sun-awt-X11-XFramePeer" ] floating enable
 #for_window [title="Mallory" class="sun-awt-X11-XFramePeer" ] floating enable
+
+exec --no-startup-id nm-applet
