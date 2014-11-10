@@ -12,7 +12,6 @@ fi
 
 # Bash completion
 
-source /etc/profile.d/autojump.sh
 source ~/dotfiles/bash_aliases 
 
 export HISTCONTROL=ignoredups
