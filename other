@@ -22,3 +22,8 @@ sudo pacman -Sy lib32-intel-dri
 
 #To get hibernation to work, add resume to hooks in mkinitcpio.conf in etc and run
 mkinitcpio -p linux
+95.138.172.53
+
+
+#mega settings for almost 4k
+xrandr --newmode "2560x1440_50b"  220.812 2560 2608 2640 2720 1440 1443 1448 1478 -hsync -vsync && xrandr --addmode HDMI1 2560x1440_50b && xrandr --output HDMI1 --mode 2560x1440_50b

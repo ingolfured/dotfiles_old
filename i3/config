@@ -135,7 +135,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #forrit
-bindsym $mod+c exec --no-startup-id firefox
+bindsym $mod+c exec --no-startup-id chromium
 bindsym $mod+o exec --no-startup-id pavucontrol
 bindsym $mod+Shift+c exec --no-startup-id firefox --private
 bindsym $mod+m exec --no-startup-id spotify
