@@ -137,7 +137,7 @@ bindsym $mod+r mode "resize"
 #forrit
 bindsym $mod+c exec --no-startup-id chromium
 bindsym $mod+o exec --no-startup-id pavucontrol
-bindsym $mod+Shift+c exec --no-startup-id firefox --private
+bindsym $mod+Shift+c exec --no-startup-id chromium --incognito
 bindsym $mod+m exec --no-startup-id spotify
 bindsym $mod+p exec --no-startup-id firefox -new-window http://rosalegt:32400/web/
 #bindsym $mod+y exec --no-startup-id setxkbmap -option grp:alt_shift_toggle "us,is"
@@ -150,7 +150,9 @@ bar {
         status_command i3status
 }
 
-bindsym XF86Display exec "xrandr --auto && xrandr --output eDP1 --off && xrandr --output eDP1 --left-of HDMI1 --auto"
+#bindsym XF86Display exec "xrandr --auto && xrandr --output eDP1 --off && xrandr --output eDP1 --left-of HDMI1 --auto"
+#supermode="'2560x1440_50b'  220.812 2560 2608 2640 2720 1440 1443 1448 1478 -hsync -vsync"
+bindsym XF86Display exec "xrandr --auto && xrandr --newmode '2560x1440_50b'  220.812 2560 2608 2640 2720 1440 1443 1448 1478 -hsync -vsync && xrandr --addmode HDMI1 2560x1440_50b && xrandr --output HDMI1 --mode 2560x1440_50b && xrandr --output eDP1 --off && sleep 3 && xrandr --output eDP1 --left-of HDMI1 --auto && feh --bg-scale $HOME/.curr.png"
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
 bindsym XF86AudioLowerVolume  exec amixer -q sset Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q sset Master toggle
