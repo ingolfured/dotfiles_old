@@ -35,6 +35,10 @@ autocmd WinEnter,VimEnter *
 \       silent! call matchdelete(31337) |
 \   endif
 
+autocmd VimEnter * nested :call tagbar#autoopen(1)
+let g:tagbar_compact = 1
+let g:tagbar_sort = 0
+
 "set foldmethod=syntax
 "set foldlevelstart=0
 

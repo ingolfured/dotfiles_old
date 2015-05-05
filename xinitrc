@@ -1,4 +1,3 @@
-
 export VISUAL=vim
 export TERMINAL=xterm
 xrdb -merge ~/.Xresources
