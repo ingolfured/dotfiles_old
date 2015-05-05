@@ -7,3 +7,50 @@ let g:tex_flavor = "latex"
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 let g:Tex_DefaultTargetFormat = "pdf"
 au BufNewFile,BufRead *.ejs set filetype=html
+"autocmd VimEnter * NERDTree
+"autocmd VimEnter * wincmd p
+
+"js beautify
+autocmd FileType javascript vnoremap <buffer>  <leader>j :call RangeJsBeautify()<cr>
+autocmd FileType html vnoremap <buffer> <leader>j :call RangeHtmlBeautify()<cr>
+autocmd FileType css vnoremap <buffer> <leader>j :call RangeCSSBeautify()<cr>
+"autocmd VimEnter * nested :call tagbar#autoopen(1)
+let g:tagbar_compact = 1
+let g:tagbar_sort = 0
+" Copy to X CLIPBOARD
+map <leader>cc :w !xsel -i -b<CR>
+map <leader>cp :w !xsel -i -p<CR>
+map <leader>cs :w !xsel -i -s<CR>
+" Paste from X CLIPBOARD
+map <leader>pp :r!xsel -p<CR>
+map <leader>ps :r!xsel -s<CR>
+map <leader>pb :r!xsel -b<CR>
+
+
+"red color for tabs
+autocmd WinEnter,VimEnter *
+\   if &expandtab |
+\       silent! call matchadd('Error', '\t',  10, 31337) |
+\   else |
+\       silent! call matchdelete(31337) |
+\   endif
+
+"set foldmethod=syntax
+"set foldlevelstart=0
+
+"let javaScript_fold=1         " JavaScript
+"let perl_fold=1               " Perl
+"let php_folding=1             " PHP
+"let r_syntax_folding=1        " R
+"let ruby_fold=1               " Ruby
+"let sh_fold_enabled=1         " sh
+"let vimsyn_folding='af'       " Vim script
+"let xml_syntax_folding=1      " XML
+
+set number background=dark
+highlight Comment    ctermfg=119
+highlight Identifier ctermfg=99AA00
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+set cm=blowfish2

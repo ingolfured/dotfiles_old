@@ -15,8 +15,8 @@ fi
 source ~/dotfiles/bash_aliases 
 
 export HISTCONTROL=ignoredups
-export HISTSIZE=100000
-export HISTFILESIZE=100000
+export HISTSIZE=1000000
+export HISTFILESIZE=1000000
 
 ### Bash options
 #fix spelling
@@ -43,8 +43,6 @@ set -o noclobber
 #set -o nounset
 
 
-
-
 ### Aliases
 #safety! ohnoes.
 alias rm='rm -i'
@@ -69,7 +67,7 @@ alias grep='grep --color=auto'
 alias cd..='cd ..'
 alias more='less'
 alias nano='nano -w'
-alias vim='vim -X'
+alias vim='vim'
 #alias xcomp='xcompmgr -cCfF -r7 -o.65 -l-10 -t-8 -D7'
 alias servethis="python -c 'import SimpleHTTPServer; SimpleHTTPServer.test()'"
 alias m='mate'
@@ -98,7 +96,7 @@ if [ "$TERM" = "linux" ]; then
     clear #for background artifacting
 fi
 
-
+export BROWSER="chromium"
 #more colors!
 if [ -f ~/.dir_colors ]; then
             eval `dircolors ~/.dir_colors`
@@ -113,6 +111,6 @@ export PATH="$PATH:/home/ingolfur/.gem/ruby/2.0.0/bin"
 if [ -f ~/.git-prompt.sh ]; then
   source ~/.git-prompt.sh
 fi
-export PS1="\e[0m[\[\e[32m\]\u\[\e[0m\]]@[\[\e[32m\]\h\[\e[0m\]]:\w\e[33m\$(__git_ps1 \" (%s)\")\e[36m \$\e[35m "
+export PS1="[\[\e[0m\]\[\e[32m\]\u\[\e[0m\]]@[\[\e[32m\]\h\[\e[0m\]]:\w\[\e[33m\]\$(__git_ps1 \" (%s)\")\[\e[36m\] \$\[\e[0m\] "
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
