@@ -153,15 +153,16 @@ bar {
 
 #bindsym XF86Display exec "xrandr --auto && xrandr --output eDP1 --off && xrandr --output eDP1 --left-of HDMI1 --auto"
 #supermode="'2560x1440_50b'  220.812 2560 2608 2640 2720 1440 1443 1448 1478 -hsync -vsync"
-bindsym XF86Display exec "xrandr --auto && xrandr --newmode '2560x1440_50b'  220.812 2560 2608 2640 2720 1440 1443 1448 1478 -hsync -vsync && xrandr --addmode HDMI1 2560x1440_50b && xrandr --output HDMI1 --mode 2560x1440_50b && xrandr --output eDP1 --off && sleep 3 && xrandr --output eDP1 --left-of HDMI1 --auto && feh --bg-scale $HOME/.curr.png"
+#bindsym XF86Display exec "xrandr --auto && xrandr --newmode '2560x1440_50b'  220.812 2560 2608 2640 2720 1440 1443 1448 1478 -hsync -vsync && xrandr --addmode HDMI1 2560x1440_50b && xrandr --output HDMI1 --mode 2560x1440_50b && xrandr --output eDP1 --off && sleep 3 && xrandr --output eDP1 --left-of HDMI1 --auto && feh --bg-scale $HOME/.curr.png"
+bindsym XF86XF86LaunchA exec ./.screenlayout/work.sh
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
 bindsym XF86AudioLowerVolume  exec amixer -q sset Master 5%- unmute
-bindsym XF86AudioMute exec amixer -q sset Master toggle
+bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle
 bindsym XF86TouchpadToggle exec "synclient TouchpadOff=$(synclient | awk '/TouchpadOff/ {print ($3+1)%2}')"
 bindsym XF86MonBrightnessUp  exec  xbacklight -inc 10
 bindsym XF86MonBrightnessDown  exec  xbacklight -dec 10
-#bindsym XF86KbdBrightnessUp  exec
-#bindsym XF86KbdBrightnessDown  exec
+bindsym XF86KbdBrightnessUp  exec kbdlight up
+bindsym XF86KbdBrightnessDown  exec kbdlight down
 bindsym XF86WLAN exec [ "$(</sys/class/rfkill/rfkill0/state)" = "1" ] && sudo rfkill block 0 || sudo rfkill unblock 0
 bindsym Print exec scrot -e 'mv $f ~/screenshots/'
 
@@ -181,3 +182,4 @@ exec --no-startup-id xset r rate 200 50
 exec --no-startup-id nm-applet
 #ssh-agent on startup
 exec --no-startup-id eval $(ssh-agent) && ssh-add
+exec --no-startup-id gnome-settings-daemon
